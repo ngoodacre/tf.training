@@ -8,9 +8,7 @@ import tensorflow as tf
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
-# Our application logic will be added here
-if __name__ == "__main__":
-    tf.app.run()
+
 def cnn_model_fn(features,labels,mode):
     """ Model function for CNN."""
     # Input Layer
@@ -72,3 +70,7 @@ def cnn_model_fn(features,labels,mode):
             labels=labels, predictions=predictions["classes"])}
     return tf.estimator.EstimatorSpec(
         mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
+
+# Our application logic will be added here
+if __name__ == "__main__":
+    tf.app.run()
